@@ -1,14 +1,14 @@
 import java.awt.Point; 
 
 public class Alignement{
-    Point debut, fin;
+    private Point debut, fin;
 
     public Alignement alignement(Partie p){ // Fonction qui detecte les alignements en cours de partie
         int k = 0;
-        for(int i=0; i<p.jeu.length; i++){
-            for(int j=0; j<p.jeu[i].length; j++){
+        for(int i=0; i<p.getJeu().length; i++){
+            for(int j=0; j<p.getJeu()[i].length; j++){
                 k=1;
-                while(i+k<p.jeu.length && p.jeu[i][j].getCouleur() == p.jeu[i+k][j].getCouleur()){ // Tant que la case qui suit i est du meme type on continue (alignement horizontale)
+                while(i+k<p.getJeu().length && p.getJeu()[i][j].getCouleur() == p.getJeu()[i+k][j].getCouleur()){ // Tant que la case qui suit i est du meme type on continue (alignement horizontale)
                     k++;
                 }
                 if(k>2){ // Si k est superieur à 2 alors il y a un alignement
@@ -22,7 +22,7 @@ public class Alignement{
                     return a;  
                 }
                 k=1;
-                while(j+k<p.jeu[i].length && p.jeu[i][j].getCouleur() == p.jeu[i][j+k].getCouleur()){
+                while(j+k<p.getJeu()[i].length && p.getJeu()[i][j].getCouleur() == p.getJeu()[i][j+k].getCouleur()){
                     k++;
                 }
                 if(k>2){
@@ -39,5 +39,22 @@ public class Alignement{
         }
         return null;
     }
+
+    public Point getDebut() {
+        return debut;
+    }
+
+    public void setDebut(Point debut) {
+        this.debut = debut;
+    }
+
+    public Point getFin() {
+        return fin;
+    }
+
+    public void setFin(Point fin) {
+        this.fin = fin;
+    }
+    
 }
 

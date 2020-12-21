@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
-import java.util.*;
 import static javax.swing.SwingConstants.*;
 
 public class InterfaceG extends JFrame implements MouseListener{
@@ -229,15 +228,15 @@ public class InterfaceG extends JFrame implements MouseListener{
     public void affichage(Partie p, int h, int l){ // Affiche les differents types de bonbons dans une fonction
         for(int i=0; i<h; i++){
             for(int j=0; j<l; j++){
-                if(p.jeu[i][j].getCouleur() == 1)
+                if(p.getJeu()[i][j].getCouleur() == 1)
                     dessinerCarreRouge(i, j);
-                if(p.jeu[i][j].getCouleur() == 2)
+                if(p.getJeu()[i][j].getCouleur() == 2)
                     dessinerCarreVert(i, j);
-                if(p.jeu[i][j].getCouleur() == 3)
+                if(p.getJeu()[i][j].getCouleur() == 3)
                     dessinerCarreBleu(i, j);
-                if(p.jeu[i][j].getCouleur() == 4)
+                if(p.getJeu()[i][j].getCouleur() == 4)
                     dessinerCarreJaune(i, j);
-                if(p.jeu[i][j].getCouleur() == 5)
+                if(p.getJeu()[i][j].getCouleur() == 5)
                     dessinerCarreViolet(i, j);
             }
         }

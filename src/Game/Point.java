@@ -1,25 +1,25 @@
  public class Point {
-	private int pts;
+	private int points;
 	
 	public Point(int nbrCase) {
 		switch(nbrCase) {
 			case 2:
-				this.pts = 40;
+				this.points = 40;
 				break;
 			case 3:
-				this.pts = 90;
+				this.points = 90;
 				break;
 			case 4:
-				this.pts = 160;
+				this.points = 160;
 				break;
 			case 5:
-				this.pts = 250;
+				this.points = 250;
 				break;
 			case 6:
-				this.pts = 360;
+				this.points = 360;
 				break;
 			default:
-				this.pts = 1000;
+				this.points = 1000;
 		}
 	}
 	

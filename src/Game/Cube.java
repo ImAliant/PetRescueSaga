@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+
 public class Cube extends JPanel{
     private String couleur; 
     public Cube(String couleur){

@@ -1,4 +1,6 @@
- public class Point {
+package Game;
+
+public class Point {
 	private int points;
 	
 	public Point(int nbrCase) {

@@ -1,12 +1,16 @@
+package Game;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Accueil implements ItemListener {
-    private JPanel panel;
-    
-    private String niveaux[] = {"Niveau 1","Niveau 2","Niveau 3"};
+//import Levels.Niveau_1;
 
+public class Accueil implements ItemListener {
+    
+    private JPanel panel;
+    private JList niveau;
+    
     private String[] args;
 
     public void addComponentToPane(Container pane) {
@@ -18,13 +22,13 @@ public class Accueil implements ItemListener {
         JButton jouer =new JButton("Jouer");
         JButton quitter =new JButton("Quitter le jeu");
 
-        /*Propriétés des boutons*/
+        /*Propriétés du bouton quitter*/
         jouer.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
                 Lanceur.main(args);
             }
-        }); 
+        });
         quitter.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
@@ -33,10 +37,11 @@ public class Accueil implements ItemListener {
         });
 
         /*Création d'une liste avec différents niveaux*/
-        JComboBox<String> niveau = new JComboBox<>(niveaux);
+        String[] niveaux = {"Niveau_1", "Niveau_2", "Niveau_3"};
+        niveau =new JList<String>(niveaux);
         niveau.setBackground(Color.WHITE);
-        niveau.setEditable(false);
-        niveau.addItemListener(this);
+
+        
 
         /*Ajouts d'objets dans les panels*/
         panNiveau.add(niveau);
@@ -71,9 +76,36 @@ public class Accueil implements ItemListener {
         accueil.addComponentToPane(frame.getContentPane());
         
         /*Affichage de la fenêtre*/
-        frame.setSize(300, 100);
+        frame.setSize(300, 130);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+        
+        // NIVEAUX
+        /*Propriétés du bouton jouer*/
+        /*if(niveau.getSelectedValue() == "Niveau_1"){
+            jouer.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseClicked(MouseEvent e){
+                    Niveau_1.main(args);
+                }
+            }); 
+        }
+        if(niveau.getSelectedValue() == "Niveau_2"){
+            jouer.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseClicked(MouseEvent e){
+                    Lanceur.main(args);
+                }
+            }); 
+        }
+        if(niveau.getSelectedValue() == "Niveau_3"){
+            jouer.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseClicked(MouseEvent e){
+                    Lanceur.main(args);
+                }
+            }); 
+        }*/
     }
     
     public static void main(String[] args) {
@@ -82,5 +114,15 @@ public class Accueil implements ItemListener {
                 GUIAccueil();
             }
         });
+    }
+
+
+    /*Getters*/
+    public JPanel getPanel() {
+        return panel;
+    }
+
+    public JList getNiveau() {
+        return niveau;
     }
 }

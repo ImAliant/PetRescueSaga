@@ -10,4 +10,8 @@ public class Case {
 	public Cube getCube() {
 		return this.cube;
 	}
+
+	public void setCube(Cube cube) {
+		this.cube = cube;
+	}
 }

@@ -56,5 +56,28 @@ public class Plateau extends JFrame {
 	public void setCouleurs(String[] couleurs) {
 		this.couleurs = couleurs;
 	}
+
+	public void etat() {
+		for (int i = 0; i < longueur; i++) {
+			for (int j = 0; j < largeur; j++) {
+				System.out.print(cases[i][j].getCube().getCouleur()+" "); 
+			}
+		}
+		System.out.println();
+	}
+	
+	public void casesAdj(int x, int y) {
+    	for(int i=x-1; i<=x+1; i++) {
+            for(int j=y-1; j<=y+1; j++) {
+                if(i!=x && j!=y && i >= 0 && i < getLongueur() && j >= 0 && j < getLargeur()) {
+                    if(getCases()[i][j].getCube().getCouleur().equals(getCases()[x][y].getCube().getCouleur())) {
+                        getCases()[i][j].getCube().setCouleur("Blanc");
+                        System.out.println(getCases()[i][j].getCube().getCouleur());
+                    }
+                }
+            }
+        }
+       //Lanceur.main(args);
+    }
 	
 }

@@ -3,7 +3,10 @@ package Game;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.MouseInputListener;
 
@@ -14,30 +17,31 @@ public class InterfaceG extends JFrame {
     private JPanel panel_BOUTON = new JPanel();
     private JButton button = new JButton();
 
-    ImageIcon icon =  new ImageIcon("C:/Users/alexv/Desktop/POO/projet-pet-rescue-saga/src/Game/image/logo.png");
-
     private String[] args;
 
     public InterfaceG(Plateau p) {
 
-        //Propriétés fenêtre
+        /*Propriétés fenêtre*/
         setTitle("Pet Rescue Saga");
         setSize(600, 700);
         setLocationRelativeTo(null);
-        setIconImage(icon.getImage());
+            /*Icone de la fenêtre*/
+            try {
+                setIconImage(ImageIO.read(new File("src/Game/image/logo.png")));
+            } 
+            catch (IOException e) {
+                System.out.println("Image non trouvé");
+            }
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-        //
         
-        //Propriétés des panels
+        /*Propriétés des panels*/
         panel_CUBES.setBackground(Color.WHITE);
         panel_BOUTON.setBackground(Color.GRAY);
-        //
-
-        //Grille du panel_CUBES
+        
+        /*Grille du panel_CUBES*/
         panel_CUBES.setLayout(new GridLayout(p.getLargeur(), p.getLongueur(), 5, 5));
-        //
-
-        //Création des cubes
+        
+        /*Création des cubes*/
         for (int i = 0; i < p.getLongueur(); i++) {
             for (int j = 0; j < p.getLargeur(); j++) {
                 if (p.getCases()[i][j].getCube().getCouleur().equals("Rouge")) {
@@ -60,9 +64,8 @@ public class InterfaceG extends JFrame {
                 }
             }
         }
-        //
         
-        //Propriétés du JButton
+        /*Propriétés du JButton*/
         button = new JButton("Quitter");
         button.addMouseListener(new MouseAdapter() {
             @Override
@@ -70,17 +73,16 @@ public class InterfaceG extends JFrame {
                 dispose();
             }
         });
-        //
 
-        //Objets liés a panel_BOUTON
+        /*Objets liés a panel_BOUTON*/
         panel_BOUTON.add(button);
-        //
-
+        
         getContentPane().add(panel_CUBES, BorderLayout.CENTER);
         getContentPane().add(panel_BOUTON, BorderLayout.PAGE_END);
     }
     
     public class CubeBleu extends Cube implements MouseInputListener {
+        
         public CubeBleu(int i, int j, int l, int h) {
             super("Bleu");
             setBounds(i, j, l, h);
@@ -91,17 +93,8 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             this.setBackground(Color.WHITE);
-            int x = e.getX();
-            int y = e.getY();
-            for(int i=x-1; i<=x+1; i++) {
-                for(int j=y-1; j<=y+1; j++) {
-                    if(i!=x && j!=y && i >= 0 && i < p.getLongueur() && j >= 0 && j < p.getLargeur()) {
-                        if(p.getCases()[i][j].getCube().getCouleur().equals(p.getCases()[x][y].getCube().getCouleur().equals("Bleu")))
-                            p.getCases()[i][j].getCube().setCouleur("Blanc");
-                    }
-                }
-            }
-            Lanceur.main(args);
+            //Lanceur.p.casesAdj(e.getX()/15, e.getY()/15);
+            System.out.println(Lanceur.p.getCases()[e.getX()/15][e.getY()/15].getCube().getCouleur());
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -140,18 +133,8 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            int x=e.getX();
-            int y=e.getY();
-            for(int i=x-1; i<=x+1; i++) {
-                for(int j=y-1; j<=y+1; j++) {
-                    if(i!=x && j!=y && i >= 0 && i < p.getLongueur() && j >= 0 && j < p.getLargeur()) {
-                        if(p.getCases()[i][j].getCube().getCouleur().equals(p.getCases()[x][y].getCube().getCouleur().equals("Rouge"))) {
-                            p.getCases()[i][j].getCube().setCouleur("Blanc");
-                        }
-                    }
-                }
-            }
-            Lanceur.main(args);
+            //Lanceur.p.casesAdj(e.getX()/15, e.getY()/15);
+            System.out.println(Lanceur.p.getCases()[e.getX()/15][e.getY()/15].getCube().getCouleur());
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -190,18 +173,8 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            int x=e.getX();
-            int y=e.getY();
-            for(int i=x-1; i<=x+1; i++) {
-                for(int j=y-1; j<=y+1; j++) {
-                    if(i!=x && j!=y && i >= 0 && i < p.getLongueur() && j >= 0 && j < p.getLargeur()) {
-                        if(p.getCases()[i][j].getCube().getCouleur().equals(p.getCases()[x][y].getCube().getCouleur().equals("Vert"))) {
-                            p.getCases()[i][j].getCube().setCouleur("Blanc");
-                        }
-                    }
-                }
-            }
-            Lanceur.main(args);
+            //Lanceur.p.casesAdj(e.getX()/15, e.getY()/15);
+            System.out.println(Lanceur.p.getCases()[e.getX()/15][e.getY()/15].getCube().getCouleur());
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -240,18 +213,7 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            int x=e.getX();
-            int y=e.getY();
-            for(int i=x-1; i<=x+1; i++) {
-                for(int j=y-1; j<=y+1; j++) {
-                    if(i!=x && j!=y && i >= 0 && i < p.getLongueur() && j >= 0 && j < p.getLargeur()) {
-                        if(p.getCases()[i][j].getCube().getCouleur().equals(p.getCases()[x][y].getCube().getCouleur().equals("Violet"))) {
-                            p.getCases()[i][j].getCube().setCouleur("Blanc");
-                        }
-                    }
-                }
-            }
-            Lanceur.main(args);
+            Lanceur.p.casesAdj(e.getX()/15, e.getY()/15);
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -290,18 +252,8 @@ public class InterfaceG extends JFrame {
 
         public void mouseClicked(MouseEvent e) {
             this.setBackground(Color.WHITE);
-            int x=e.getX();
-            int y=e.getY();
-            for(int i=x-1; i<=x+1; i++) {
-                for(int j=y-1; j<=y+1; j++) {
-                    if(i!=x && j!=y && i >= 0 && i < p.getLongueur() && j >= 0 && j < p.getLargeur()) {
-                        if(p.getCases()[i][j].getCube().getCouleur().equals(p.getCases()[x][y].getCube().getCouleur().equals("Jaune"))) {
-                            p.getCases()[i][j].getCube().setCouleur("Blanc");
-                        }
-                    }
-                }
-            }
-            Lanceur.main(args);
+           // Lanceur.p.casesAdj(e.getX()/15, e.getY()/15);
+            System.out.println(Lanceur.p.getCases()[e.getX()/15][e.getY()/15].getCube().getCouleur());
         }
         
         public void mouseEntered(MouseEvent e) {}

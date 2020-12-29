@@ -4,8 +4,6 @@ import Game.*;
 import Game.Plateau;
 
 public class Niveau_1 extends Plateau{
-    
-    private static final long serialVersionUID = 1577023567605422448L;
 
     public Niveau_1(){
         super(6, 7);

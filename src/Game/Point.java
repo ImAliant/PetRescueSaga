@@ -1,5 +1,3 @@
-package Game;
-
 public class Point {
 	private int points;
 	

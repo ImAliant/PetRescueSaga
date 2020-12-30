@@ -1,5 +1,3 @@
-package Game;
-
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -92,33 +90,6 @@ public class Accueil implements ItemListener {
         frame.setSize(300, 200);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        
-        // NIVEAUX
-        /*Propriétés du bouton jouer*/
-        /*if(niveau.getSelectedValue() == "Niveau_1"){
-            jouer.addMouseListener(new MouseAdapter(){
-                @Override
-                public void mouseClicked(MouseEvent e){
-                    Niveau_1.main(args);
-                }
-            }); 
-        }
-        if(niveau.getSelectedValue() == "Niveau_2"){
-            jouer.addMouseListener(new MouseAdapter(){
-                @Override
-                public void mouseClicked(MouseEvent e){
-                    Lanceur.main(args);
-                }
-            }); 
-        }
-        if(niveau.getSelectedValue() == "Niveau_3"){
-            jouer.addMouseListener(new MouseAdapter(){
-                @Override
-                public void mouseClicked(MouseEvent e){
-                    Lanceur.main(args);
-                }
-            }); 
-        }*/
     }
     
     public static void main(String[] args) {

@@ -1,6 +1,8 @@
 package Game;
 
 import javax.swing.*;
+
+import java.awt.Color;
 import java.util.Random;
 
 
@@ -10,6 +12,8 @@ public class Plateau extends JFrame {
 	private int longueur;
 
 	protected String[] couleurs = {"Rouge", "Vert", "Bleu", "Jaune", "Violet"};
+	
+	private String[] args;
 	
 	public Plateau(int largeur, int longueur) {
 		this.largeur = largeur;
@@ -65,19 +69,4 @@ public class Plateau extends JFrame {
 		}
 		System.out.println();
 	}
-	
-	public void casesAdj(int x, int y) {
-    	for(int i=x-1; i<=x+1; i++) {
-            for(int j=y-1; j<=y+1; j++) {
-                if(i!=x && j!=y && i >= 0 && i < getLongueur() && j >= 0 && j < getLargeur()) {
-                    if(getCases()[i][j].getCube().getCouleur().equals(getCases()[x][y].getCube().getCouleur())) {
-                        getCases()[i][j].getCube().setCouleur("Blanc");
-                        System.out.println(getCases()[i][j].getCube().getCouleur());
-                    }
-                }
-            }
-        }
-       //Lanceur.main(args);
-    }
-	
 }

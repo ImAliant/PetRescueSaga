@@ -89,7 +89,8 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             this.setBackground(Color.WHITE);
-            //Lanceur.p.casesAdj(x, y);                
+            //Lanceur.p.casesAdj(x, y);  
+            System.out.println(x + " " + y);              
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -135,6 +136,7 @@ public class InterfaceG extends JFrame {
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
             //Lanceur.p.casesAdj(x, y);
+            System.out.println(x + " " + y);  
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -177,6 +179,7 @@ public class InterfaceG extends JFrame {
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
             //Lanceur.p.casesAdj(x, y);
+            System.out.println(x + " " + y);  
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -217,6 +220,7 @@ public class InterfaceG extends JFrame {
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
             //Lanceur.p.casesAdj(x, y);
+            System.out.println(x + " " + y);  
         }
         
         public void mouseEntered(MouseEvent e) {
@@ -257,6 +261,7 @@ public class InterfaceG extends JFrame {
         public void mouseClicked(MouseEvent e) {
             this.setBackground(Color.WHITE);
             //Lanceur.p.casesAdj(x, y);
+            System.out.println(x + " " + y);  
            }
         
         public void mouseEntered(MouseEvent e) {}

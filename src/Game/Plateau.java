@@ -1,4 +1,6 @@
 import javax.swing.*;
+
+import java.awt.Color;
 import java.util.Random;
 
 public class Plateau extends JFrame {
@@ -62,18 +64,4 @@ public class Plateau extends JFrame {
 		}
 		System.out.println();
 	}
-	
-	public void casesAdj(int x, int y) {
-    	/*for(int i=x-1; i<=x+1; i++) {
-            for(int j=y-1; j<=y+1; j++) {
-                if(i!=x && j!=y && i >= 0 && i < getLongueur() && j >= 0 && j < getLargeur()) {
-                    if(getCases()[i][j].getCube().getCouleur().equals(getCases()[x][y].getCube().getCouleur())) {
-                        getCases()[i][j].getCube().setCouleur("Blanc");
-                    }
-                }
-            }
-		}*/
-		casesAdj(x+1, y+1);
-    }
-	
 }

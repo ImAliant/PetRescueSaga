@@ -13,7 +13,7 @@ public class Cube extends JPanel{
     	return this.couleur;
     }
     
-    public void setCouleur(String color) {
-    	this.couleur = color;
+    public void setCouleur(String couleur) {
+    	this.couleur = couleur;
     }
 }

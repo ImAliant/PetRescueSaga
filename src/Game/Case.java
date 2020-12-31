@@ -1,5 +1,5 @@
 public class Case {
-	private Cube cube;
+	private Cube cube;	
 	
 	public Case(Cube cube) {
 		this.cube = cube;

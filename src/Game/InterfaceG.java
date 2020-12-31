@@ -13,6 +13,8 @@ public class InterfaceG extends JFrame {
     private JPanel panel_CUBES = new JPanel();
     private JPanel panel_BOUTON = new JPanel();
     private JButton button = new JButton();
+    
+    private String[] args;
 
     public InterfaceG(Plateau p) {
 
@@ -83,12 +85,14 @@ public class InterfaceG extends JFrame {
                     if(Lanceur.p.getCases()[i][j].getCube().getCouleur().equals(c)) {                      
                     	getContentPane().remove(Lanceur.p.getCases()[i][j].getCube());
                     	panel_CUBES.add(new CubeBlanc(i, j, 10, 10));
-                    	Lanceur.p.getCases()[i][j].getCube().setCouleur("Blanc");
+                    	Lanceur.p.getCases()[i][j].getCube().setCouleur("Blanc");                    	
                     }
                 }
             }
         } 
+        dispose();
        	getContentPane().add(panel_CUBES, BorderLayout.CENTER);
+       	Lanceur.main(args);
     }
     
     public class CubeBleu extends Cube implements MouseInputListener {       
@@ -100,13 +104,10 @@ public class InterfaceG extends JFrame {
             setBackground(Color.BLUE);
             addMouseListener(this);
         }
-        
-        
+               
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            casesAdj(x, y, "Bleu");
-            this.setBackground(Color.WHITE);
-            //Lanceur.p.casesAdj(x, y);
+            casesAdj(x, y, "Bleu");                                                                       
         }
         
         public void mouseEntered(MouseEvent e) {}
@@ -119,7 +120,7 @@ public class InterfaceG extends JFrame {
         
         public void mouseDragged(MouseEvent e) {}
         
-        public void mouseMoved(MouseEvent e) {}
+        public void mouseMoved(MouseEvent e) {}             
     }
     
     public class CubeRouge extends Cube implements MouseInputListener {	
@@ -139,8 +140,7 @@ public class InterfaceG extends JFrame {
                
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            casesAdj(x, y, "Rouge");
-            //Lanceur.p.casesAdj(x, y);
+            casesAdj(x, y, "Rouge");           
         }
         
         public void mouseEntered(MouseEvent e) {}
@@ -153,7 +153,7 @@ public class InterfaceG extends JFrame {
         
         public void mouseDragged(MouseEvent e) {}
         
-        public void mouseMoved(MouseEvent e) {}
+        public void mouseMoved(MouseEvent e) {}       
     }
     
     public class CubeVert extends Cube implements MouseInputListener {
@@ -165,12 +165,12 @@ public class InterfaceG extends JFrame {
             setBackground(Color.GREEN);
             addMouseListener(this);
         }
-               
+              
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            casesAdj(x, y, "Vert");
-        }
-        
+            casesAdj(x, y, "Vert"); 
+        }                                            
+                            
         public void mouseEntered(MouseEvent e) {}
 
         public void mouseExited(MouseEvent e) {}
@@ -181,7 +181,7 @@ public class InterfaceG extends JFrame {
         
         public void mouseDragged(MouseEvent e) {}
         
-        public void mouseMoved(MouseEvent e) {}
+        public void mouseMoved(MouseEvent e) {}           
     }
     
     public class CubeViolet extends Cube implements MouseInputListener {
@@ -196,8 +196,7 @@ public class InterfaceG extends JFrame {
         
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
-            casesAdj(x, y, "Violet");
-            //Lanceur.p.casesAdj(x, y);
+            casesAdj(x, y, "Violet");            
         }
         
         public void mouseEntered(MouseEvent e) {}
@@ -209,10 +208,8 @@ public class InterfaceG extends JFrame {
         public void mouseReleased(MouseEvent e) {}
         
         public void mouseDragged(MouseEvent e) {}
-        
-        public void mouseMoved(MouseEvent e) {
-        	
-        }
+       
+        public void mouseMoved(MouseEvent e) {}
     }
     
     public class CubeJaune extends Cube implements MouseInputListener {
@@ -228,7 +225,7 @@ public class InterfaceG extends JFrame {
         public void mouseClicked(MouseEvent e) {
             setBackground(Color.WHITE);
             casesAdj(x, y, "Jaune"); 
-        }
+        }           
         
         public void mouseEntered(MouseEvent e) {}
 

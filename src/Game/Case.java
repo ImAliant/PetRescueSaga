@@ -1,5 +1,3 @@
-package Game;
-
 public class Case {
 	private Cube cube;	
 	

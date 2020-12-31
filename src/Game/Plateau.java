@@ -1,10 +1,7 @@
-package Game;
-
 import javax.swing.*;
 
 import java.awt.Color;
 import java.util.Random;
-
 
 public class Plateau extends JFrame {
 	private Case[][] cases;

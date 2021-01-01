@@ -75,6 +75,7 @@ public class InterfaceG extends JFrame {
 
         /*Objets liés a panel_BOUTON*/
         panel_BOUTON.add(button);
+        panel_BOUTON.add(new JLabel("Score : " + Point.points));
         
         getContentPane().add(panel_CUBES, BorderLayout.CENTER);
         getContentPane().add(panel_BOUTON, BorderLayout.PAGE_END);
@@ -92,6 +93,7 @@ public class InterfaceG extends JFrame {
                
         public void mouseClicked(MouseEvent e) {
             casesAdjRec(x, y, "Bleu");
+            new Point(Lanceur.p.countBlanc());
             //gravity(x, y);                                                                       
         }
         
@@ -119,7 +121,8 @@ public class InterfaceG extends JFrame {
         }
                
         public void mouseClicked(MouseEvent e) {
-            casesAdjRec(x, y, "Rouge");      
+            casesAdjRec(x, y, "Rouge");
+            new Point(Lanceur.p.countBlanc());
             //gravity(x, y);      
         }
         
@@ -148,6 +151,7 @@ public class InterfaceG extends JFrame {
               
         public void mouseClicked(MouseEvent e) {
             casesAdjRec(x, y, "Vert"); 
+            new Point(Lanceur.p.countBlanc());
             //gravity(x, y); 
         }                                            
                             
@@ -203,6 +207,7 @@ public class InterfaceG extends JFrame {
 
         public void mouseClicked(MouseEvent e) {
             casesAdjRec(x, y, "Jaune"); 
+            new Point(Lanceur.p.countBlanc());
             //gravity(x, y); 
         }           
         

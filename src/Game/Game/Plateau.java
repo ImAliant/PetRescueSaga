@@ -65,4 +65,16 @@ public class Plateau extends JFrame {
 		}
 		System.out.println();
 	}
+
+	public int countBlanc() {
+		int k = 0;
+		for (int i = 0; i < longueur; i++) {
+			for (int j = 0; j < largeur; j++) {
+				if(cases[i][j].getCube().getCouleur().equals("Blanc")) {
+					k++;
+				}
+			}
+		}
+		return k;
+	}
 }

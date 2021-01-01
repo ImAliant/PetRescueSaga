@@ -1,3 +1,5 @@
+package Game;
+
 import javax.swing.*;
 
 public class Cube extends JPanel{
@@ -15,5 +17,11 @@ public class Cube extends JPanel{
     
     public void setCouleur(String couleur) {
     	this.couleur = couleur;
+    }
+
+    public boolean isWhite(){
+        if(this.getCouleur() != "Blanc")
+            return false;
+        return true;
     }
 }

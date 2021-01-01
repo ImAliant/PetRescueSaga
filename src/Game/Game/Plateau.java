@@ -1,9 +1,11 @@
-import javax.swing.*;
+package Game;
 
-import java.awt.Color;
 import java.util.Random;
 
+import javax.swing.*;
+
 public class Plateau extends JFrame {
+	
 	private Case[][] cases;
 	private int largeur;
 	private int longueur;
@@ -14,13 +16,12 @@ public class Plateau extends JFrame {
 		this.largeur = largeur;
 		this.longueur = longueur;
 		cases = new Case[largeur][longueur];
-		
-		Random r = new Random();
-		for (int i = 0; i < longueur; i++) {
-			for (int j = 0; j < largeur; j++) {
-				cases[i][j] = new Case(new Cube(couleurs[r.nextInt(5)])); // Gestion Animaux � revoir
-			}
-		}
+		Random r =new Random();
+        for(int i = 0; i < longueur; i++){
+            for(int j = 0; j < largeur; j++){
+                cases[i][j] =new Case(new Cube(couleurs[r.nextInt(5)]));
+            }
+        }
 	}
 	
 	/*Getters et Setters*/

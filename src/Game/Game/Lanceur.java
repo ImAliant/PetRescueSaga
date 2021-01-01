@@ -1,3 +1,7 @@
+package Game;
+
+//import Levels.*;
+
 import javax.swing.SwingUtilities;
 
 public class Lanceur {

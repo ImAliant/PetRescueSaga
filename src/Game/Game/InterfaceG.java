@@ -272,7 +272,7 @@ public class InterfaceG extends JFrame {
             	getContentPane().remove(Lanceur.p.getCases()[x-1][y].getCube());
             	panel_CUBES.add(new CubeBlanc(x-1, y, 10, 10));                   	
             	Lanceur.p.getCases()[x-1][y].getCube().setCouleur("Blanc");
-            	casesAdjRec(x-1, y, anc);
+                casesAdjRec(x-1, y, anc);
             }
         }
     	if(x >= 0 && x < Lanceur.p.getLongueur() && y-1 >= 0 && y-1 < Lanceur.p.getLargeur()) {
@@ -281,7 +281,7 @@ public class InterfaceG extends JFrame {
             	getContentPane().remove(Lanceur.p.getCases()[x][y-1].getCube());
             	panel_CUBES.add(new CubeBlanc(x, y-1, 10, 10));                   	
             	Lanceur.p.getCases()[x][y-1].getCube().setCouleur("Blanc");
-            	casesAdjRec(x, y-1, anc);
+                casesAdjRec(x, y-1, anc);
             }
         }
     	if(x >= 0 && x < Lanceur.p.getLongueur() && y+1 >= 0 && y+1 < Lanceur.p.getLargeur()) {
@@ -289,8 +289,8 @@ public class InterfaceG extends JFrame {
             	anc=c;
             	getContentPane().remove(Lanceur.p.getCases()[x][y+1].getCube());
             	panel_CUBES.add(new CubeBlanc(x, y+1, 10, 10));                   	
-            	Lanceur.p.getCases()[x][y+1].getCube().setCouleur("Blanc");
-            	casesAdjRec(x, y+1, anc);
+                Lanceur.p.getCases()[x][y+1].getCube().setCouleur("Blanc");
+                casesAdjRec(x, y+1, anc);
             }
         }
     	if(x+1 >= 0 && x+1 < Lanceur.p.getLongueur() && y >= 0 && y < Lanceur.p.getLargeur()) {
@@ -298,13 +298,12 @@ public class InterfaceG extends JFrame {
             	anc=c;
             	getContentPane().remove(Lanceur.p.getCases()[x+1][y].getCube());
             	panel_CUBES.add(new CubeBlanc(x+1, y, 10, 10));                   	
-            	Lanceur.p.getCases()[x+1][y].getCube().setCouleur("Blanc");  
-            	casesAdjRec(x+1, y, anc);
+                Lanceur.p.getCases()[x+1][y].getCube().setCouleur("Blanc");
+                casesAdjRec(x+1, y, anc);
             }
         }
-    	dispose();
-       	getContentPane().add(panel_CUBES, BorderLayout.CENTER);
-       	Lanceur.main(args);
+        getContentPane().add(panel_CUBES, BorderLayout.CENTER);
+        Lanceur.main(args);
     }
 
     public void gravity(int x, int y){

@@ -20,10 +20,25 @@ public class Point {
 			case 6:
 				Point.points = 360;
 				break;
+			case 7 :
+				Point.points = 490;
+				break;
+			case 8 :
+				Point.points = 640;
+				break;
+			case 9 :
+				Point.points = 810;
+				break;
 			default:
 				Point.points = 1000;
 		}
 	}
-	
+	public int getPoints() {
+		return points;
+	}
+
+	public void setPoints(int points) {
+		this.points = points;
+	}
 
 }

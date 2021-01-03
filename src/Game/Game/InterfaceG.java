@@ -269,41 +269,39 @@ public class InterfaceG extends JFrame {
         Lanceur.main(args);
     }
 
+    public void maj(int i, int j) {
+    	getContentPane().remove(Lanceur.p.getCases()[i][j].getCube());
+    	panel_CUBES.add(new CubeBlanc(i, j, 10, 10));                   	
+    	Lanceur.p.getCases()[i][j].getCube().setCouleur("Blanc"); 
+    }
+
     public void casesAdjRec(int x, int y, String c){
         String anc="";
     	if(x-1 >= 0 && x-1 < Lanceur.p.getLongueur() && y >= 0 && y < Lanceur.p.getLargeur()) {
             if(Lanceur.p.getCases()[x-1][y].getCube().getCouleur().equals(c)) {
             	anc=c;
-            	getContentPane().remove(Lanceur.p.getCases()[x-1][y].getCube());
-            	panel_CUBES.add(new CubeBlanc(x-1, y, 10, 10));                   	
-            	Lanceur.p.getCases()[x-1][y].getCube().setCouleur("Blanc");
+            	maj(x-1,y);
                 casesAdjRec(x-1, y, anc);
             }
         }
     	if(x >= 0 && x < Lanceur.p.getLongueur() && y-1 >= 0 && y-1 < Lanceur.p.getLargeur()) {
             if(Lanceur.p.getCases()[x][y-1].getCube().getCouleur().equals(c)) { 
             	anc=c;
-            	getContentPane().remove(Lanceur.p.getCases()[x][y-1].getCube());
-            	panel_CUBES.add(new CubeBlanc(x, y-1, 10, 10));                   	
-            	Lanceur.p.getCases()[x][y-1].getCube().setCouleur("Blanc");
+            	maj(x, y-1);
                 casesAdjRec(x, y-1, anc);
             }
         }
     	if(x >= 0 && x < Lanceur.p.getLongueur() && y+1 >= 0 && y+1 < Lanceur.p.getLargeur()) {
             if(Lanceur.p.getCases()[x][y+1].getCube().getCouleur().equals(c)) {
             	anc=c;
-            	getContentPane().remove(Lanceur.p.getCases()[x][y+1].getCube());
-            	panel_CUBES.add(new CubeBlanc(x, y+1, 10, 10));                   	
-                Lanceur.p.getCases()[x][y+1].getCube().setCouleur("Blanc");
+                maj(x, y+1);
                 casesAdjRec(x, y+1, anc);
             }
         }
     	if(x+1 >= 0 && x+1 < Lanceur.p.getLongueur() && y >= 0 && y < Lanceur.p.getLargeur()) {
             if(Lanceur.p.getCases()[x+1][y].getCube().getCouleur().equals(c)) {                      
             	anc=c;
-            	getContentPane().remove(Lanceur.p.getCases()[x+1][y].getCube());
-            	panel_CUBES.add(new CubeBlanc(x+1, y, 10, 10));                   	
-                Lanceur.p.getCases()[x+1][y].getCube().setCouleur("Blanc");
+            	maj(x+1, y);
                 casesAdjRec(x+1, y, anc);
             }
         }

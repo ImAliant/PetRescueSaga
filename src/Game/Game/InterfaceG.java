@@ -250,25 +250,6 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}
     }
 
-    public void casesAdj(int x, int y, String c) {
-        for(int i=x-1; i<=x+1; i++) {
-            for(int j=y-1; j<=y+1; j++) {
-                if(i >= 0 && i < Lanceur.p.getLongueur() && j >= 0 && j < Lanceur.p.getLargeur()) {
-                    if(Lanceur.p.getCases()[i][j].getCube().getCouleur().equals(c)) {                      
-                        getContentPane().remove(Lanceur.p.getCases()[i][j].getCube());
-                        panel_CUBES.add(new CubeBlanc(i, j, 10, 10));
-                        Lanceur.p.getCases()[x][y].getCube().setCouleur("Blanc");
-                        Lanceur.p.getCases()[i][j].getCube().setCouleur("Blanc");
-                        gravity(i, j);
-                    }
-                }
-            }
-        } 
-        dispose();
-        getContentPane().add(panel_CUBES, BorderLayout.CENTER);
-        Lanceur.main(args);
-    }
-
     public void maj(int i, int j) {
     	getContentPane().remove(Lanceur.p.getCases()[i][j].getCube());
     	panel_CUBES.add(new CubeBlanc(i, j, 10, 10));                   	
@@ -309,7 +290,7 @@ public class InterfaceG extends JFrame {
         Lanceur.main(args);
     }
 
-    public void gravity(int x, int y){
+    /*public void gravity(int x, int y){
         Cube positionCube = Lanceur.p.getCases()[x][y].getCube();
         while(positionCube.isWhite()){
             if(!Lanceur.p.getCases()[x][y-1].getCube().isWhite()){
@@ -322,5 +303,5 @@ public class InterfaceG extends JFrame {
         }
         getContentPane().add(panel_CUBES, BorderLayout.CENTER);
         Lanceur.main(args);
-    }
+    }*/
 }

@@ -10,16 +10,20 @@ public class Plateau extends JFrame {
 	private int largeur;
 	private int longueur;
 
-	protected String[] couleurs = {"Rouge", "Vert", "Bleu", "Jaune", "Violet"};
+	protected String[] couleurs = {"Rouge", "Vert", "Bleu", "Jaune", "Violet", "Marron"};
+	protected String[] images = {"src/Game/image/Chat.jpg", "src/Game/image/Lapin.jpg", "src/Game/image/Panda.jpg"};
 	
 	public Plateau(int largeur, int longueur) {
 		this.largeur = largeur;
 		this.longueur = longueur;
 		cases = new Case[largeur][longueur];
-		Random r =new Random();
+		Random r = new Random();
         for(int i = 0; i < longueur; i++){
             for(int j = 0; j < largeur; j++){
-                cases[i][j] =new Case(new Cube(couleurs[r.nextInt(5)]));
+                cases[i][j] = new Case(new Cube(couleurs[r.nextInt(5)]));
+                if(cases[i][j].getCube().getCouleur().equals("Marron")) {
+                	cases[i][j].getCube().setAnimal(new Animal(images[r.nextInt(3)]));
+                }
             }
         }
 	}

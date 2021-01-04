@@ -8,6 +8,7 @@ public class Case {
 	public Case(Cube cube) {
 		this.cube = cube;
 	}
+	
 	public Case(Animal animal) {
 		this.animal = animal;
 	}

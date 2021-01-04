@@ -1,10 +1,11 @@
 package Game;
 
+import java.io.Serializable;
 import java.util.Random;
 
 import javax.swing.*;
 
-public class Plateau extends JFrame {
+public class Plateau extends JFrame implements Serializable{
 	
 	private Case[][] cases;
 	private int largeur;

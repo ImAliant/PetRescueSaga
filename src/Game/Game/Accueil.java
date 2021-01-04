@@ -31,8 +31,8 @@ public class Accueil implements ItemListener {
         /* Création des boutons */
         JButton jouer = new JButton("Jouer");
         JButton quitter = new JButton("Quitter le jeu");
-
-        /* Propriétés du bouton quitter */
+        
+        /* Propriétés des boutons */
         jouer.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

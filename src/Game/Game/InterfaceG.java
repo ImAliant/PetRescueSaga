@@ -179,7 +179,8 @@ public class InterfaceG extends JFrame {
         }
         
         public void mouseClicked(MouseEvent e) {
-            casesAdjRec(x, y, "Violet");            
+            casesAdjRec(x, y, "Violet");          
+            new Point(Lanceur.p.countBlanc());  
         }
         
         public void mouseEntered(MouseEvent e) {}
@@ -289,6 +290,8 @@ public class InterfaceG extends JFrame {
         getContentPane().add(panel_CUBES, BorderLayout.CENTER);
         Lanceur.main(args);
     }
+
+    
 
     /*public void gravity(int x, int y){
         Cube positionCube = Lanceur.p.getCases()[x][y].getCube();

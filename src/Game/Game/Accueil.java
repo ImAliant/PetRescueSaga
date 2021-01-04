@@ -10,7 +10,7 @@ import javax.swing.*;
 
 //import Levels.Niveau_1;
 
-public class Accueil implements ItemListener {
+public class Accueil {
 
     private JPanel panel;
     private JList<?> niveau;
@@ -31,8 +31,8 @@ public class Accueil implements ItemListener {
         /* Création des boutons */
         JButton jouer = new JButton("Jouer");
         JButton quitter = new JButton("Quitter le jeu");
-
-        /* Propriétés du bouton quitter */
+        
+        /* Propriétés des boutons */
         jouer.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -63,11 +63,6 @@ public class Accueil implements ItemListener {
         pane.add(labImg, BorderLayout.PAGE_START);
         pane.add(niveau, BorderLayout.CENTER);
         pane.add(panel, BorderLayout.PAGE_END);
-    }
-
-    public void itemStateChanged(ItemEvent evt) {
-        CardLayout cl = (CardLayout) (panel.getLayout());
-        cl.show(panel, (String) evt.getItem());
     }
 
     private static void GUIAccueil() throws IOException {

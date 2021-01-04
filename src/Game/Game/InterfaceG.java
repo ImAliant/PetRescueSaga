@@ -190,9 +190,14 @@ public class InterfaceG extends JFrame {
         }
         
         public void mouseClicked(MouseEvent e) {
+<<<<<<< HEAD
             casesAdjRec(x, y, "Violet");  
             new Point(Lanceur.p.countBlanc());
             gravity(x, y); 
+=======
+            casesAdjRec(x, y, "Violet");          
+            new Point(Lanceur.p.countBlanc());  
+>>>>>>> 63edfc7a6e0a365d9ac18e60d09f1e37b6a915f4
         }
         
         public void mouseEntered(MouseEvent e) {}
@@ -329,6 +334,7 @@ public class InterfaceG extends JFrame {
         Lanceur.main(args);
     }
 
+<<<<<<< HEAD
     	public void gravity(int x, int y){
             for(int i=x; i>=1; i--) {
             	if(!Lanceur.p.getCases()[i-1][y].getCube().isWhite()) {
@@ -336,6 +342,18 @@ public class InterfaceG extends JFrame {
             		Lanceur.p.getCases()[i-1][y].getCube().setCouleur(Lanceur.p.getCases()[i][y].getCube().getCouleur());
             		Lanceur.p.getCases()[i][y].getCube().setCouleur(tmp.getCouleur());
             	}
+=======
+    
+
+    /*public void gravity(int x, int y){
+        Cube positionCube = Lanceur.p.getCases()[x][y].getCube();
+        while(positionCube.isWhite()){
+            if(!Lanceur.p.getCases()[x][y-1].getCube().isWhite()){
+                getContentPane().remove(Lanceur.p.getCases()[x][y].getCube());
+                panel_CUBES.add(new Cube(Lanceur.p.getCases()[x][y-1].getCube().getCouleur()));
+                Lanceur.p.getCases()[x][y].getCube().setCouleur(Lanceur.p.getCases()[x][y-1].getCube().getCouleur());
+                Lanceur.p.getCases()[x][y-1].getCube().setCouleur("Blanc");
+>>>>>>> 63edfc7a6e0a365d9ac18e60d09f1e37b6a915f4
             }
     	}
         

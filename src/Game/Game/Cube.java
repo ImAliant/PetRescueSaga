@@ -1,8 +1,10 @@
 package Game;
 
+import java.io.Serializable;
+
 import javax.swing.*;
 
-public class Cube extends JPanel{
+public class Cube extends JPanel implements Serializable{
     
     private String couleur;
     private Animal animal;

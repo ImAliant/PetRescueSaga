@@ -3,12 +3,12 @@
 Commande de compilation :
 =========================
 
-* Dans un terminal ouvert dans le dossier du projet (\projet-pet-rescue-saga), écrire javac -d . src/Game/Game/*.java.
+* Dans un terminal ouvert dans le dossier du projet (\projet-pet-rescue-saga), écrire javac -d . src/Game/Game/*.java
 
 Exécution du programme :
 =======================
 
-* Dans le même terminal, écrire java Game.Accueil.
+* Dans le même terminal, écrire java Game.Accueil
 
 Utilisation du programme après execution :
 ==========================================

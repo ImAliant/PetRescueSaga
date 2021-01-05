@@ -12,6 +12,9 @@ public class Cube extends JPanel implements Serializable{
 
     public Cube(String couleur){
         this.couleur = couleur;
+    }
+    
+    public Cube(Animal animal){
         this.animal = animal;
     }
     

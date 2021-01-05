@@ -1,7 +1,6 @@
 package Game;
 
-<<<<<<< HEAD
-import javax.swing.*;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -25,19 +24,12 @@ public class Animal extends Cube { // Modele
 		catch(IOException e) {
 			System.out.println(e.getMessage());
 		}
+		setBackground(Color.BLACK);
 	}
 	
 	public String getChemin() {
 		return this.chemin;
 	}
-=======
-public class Animal {
-
-    public Animal(String couleur) {
-        
-    }
-    
->>>>>>> 63edfc7a6e0a365d9ac18e60d09f1e37b6a915f4
 }
     
 

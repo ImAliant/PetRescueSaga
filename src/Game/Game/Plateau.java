@@ -71,15 +71,6 @@ public class Plateau extends JFrame implements Serializable{
 		}
 	}
 
-	public void etat() {
-		for (int i = 0; i < longueur; i++) {
-			for (int j = 0; j < largeur; j++) {
-				System.out.print(cases[i][j].getCube().getCouleur()+" "); 
-			}
-		}
-		System.out.println();
-	}
-
 	public int countBlanc() {
 		int k = 0;
 		for (int i = 0; i < longueur; i++) {

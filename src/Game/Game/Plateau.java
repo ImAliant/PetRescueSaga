@@ -62,6 +62,15 @@ public class Plateau extends JFrame implements Serializable{
 		this.couleurs = couleurs;
 	}
 
+	public void affiche() {
+		for (int i = 0; i < longueur; i++) {
+			for (int j = 0; j < largeur; j++) {
+				System.out.print(cases[i][j].getCube().getCouleur()+" "); 
+			}
+			System.out.println();
+		}
+	}
+
 	public void etat() {
 		for (int i = 0; i < longueur; i++) {
 			for (int j = 0; j < largeur; j++) {
@@ -81,5 +90,34 @@ public class Plateau extends JFrame implements Serializable{
 			}
 		}
 		return k;
+	}
+	public boolean estPlusGrand(int colonne,int i,int j) {
+		if(!cases[i][colonne].getCube().isWhite() && cases[j][colonne].getCube().isWhite()) {
+			return true;
+		}
+		return false;
+	}
+	
+	public void graviteCSelect(int colonne) {
+		int n = largeur;
+		for(int i=0;i<=n-2;i++) {
+			int min = i;
+			for(int j=i+1;j<=n-1;j++) {
+				if(estPlusGrand(colonne,min,j)) {
+					min = j;
+				}
+			}
+			if(min != i) {
+				Cube tmp = cases[min][colonne].getCube();
+				cases[min][colonne].getCube().setCouleur(Lanceur.p.getCases()[i][colonne].getCube().getCouleur());
+				cases[i][colonne].getCube().setCouleur("Blanc");
+			}
+		}
+	}
+	
+	public void gravite() {
+		for(int j=0; j<largeur; j++) {
+			graviteCSelect(j);
+		}
 	}
 }

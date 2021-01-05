@@ -75,7 +75,7 @@ public class Accueil {
             frame.setIconImage(ImageIO.read(new File("src/Game/image/logo.png")));
         } 
         catch (IOException e) {
-            System.out.println("L'image n'a pas été trouvé.");
+            System.out.println("L'image n'a pas ete trouve.");
         }
         
 

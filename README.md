@@ -3,7 +3,7 @@
 Commande de compilation :
 =========================
 
-* Dans un terminal ouvert dans le dossier du projet (\projet-pet-rescue-saga), écrire javac -d . src/Game/Game/*.java
+* Dans un terminal ouvert dans le dossier du projet (\diamant_essahlaoui), écrire javac -d . src/Game/Game/*.java
 
 Exécution du programme :
 =======================

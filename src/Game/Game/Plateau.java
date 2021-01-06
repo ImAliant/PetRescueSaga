@@ -22,7 +22,16 @@ public class Plateau extends JFrame implements Serializable{
 		Random r = new Random();
         for(int i = 0; i < longueur; i++){
             for(int j = 0; j < largeur; j++){
-                cases[i][j] = new Case(new Cube(couleurs[r.nextInt(5)]));
+				//int x = r.nextInt(2);
+            	//if(x == 0) {
+				cases[i][j] = new Case(new Cube(couleurs[r.nextInt(5)]));
+				//} 
+            	/*else if(x == 1) {
+            		cases[i][j] = new Case(new Animal(animaux[r.nextInt(3)])); 
+				}
+				else if (r.nextInt(3) == 2) {
+            		cases[i][j] = new Case(new Cube(obstacles[r.nextInt(3)])); 
+            	}*/
                 if(cases[i][j].getCube().getCouleur().equals("Marron")) {
                 	cases[i][j].getCube().setAnimal(new Animal(images[r.nextInt(3)]));
                 }

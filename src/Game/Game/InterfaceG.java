@@ -61,15 +61,21 @@ public class InterfaceG extends JFrame {
                 else if (p.getCases()[i][j].getCube().getCouleur().equals("Blanc")) { 
                     panel_CUBES.add(new CubeBlanc(i, j, 10, 10)); 
                 }
-                /*else if (p.getCases()[i][j].getCube().getCouleur().equals("Marron")) { 
-                    if(p.getCases()[i][j].getCube().getAnimal().getChemin().equals("src/Game/image/Chat.jpg")) {
-                    	 panel_CUBES.add(new Animal("src/Game/image/Chat.jpg")); 
+                /*else if (p.getCases()[i][j].getCube() instanceof Animal) { 
+                    if(p.getCases()[i][j].getCube().getAnimal().getNom().equals("Chat")) {
+                    	JButton chat = new JButton(new ImageIcon("src/Game/image/Chat.jpg"));
+                    	chat.setBounds(i, j, 10, 10);
+                    	panel_CUBES.add(chat);
                     }
-                    else if (p.getCases()[i][j].getCube().getCouleur().equals("src/Game/image/Lapin.jpg")) {
-                    	 panel_CUBES.add(new Animal("src/Game/image/Lapin.jpg")); 
+                    else if (p.getCases()[i][j].getCube().getAnimal().getNom().equals("Lapin")) {
+                    	JButton lapin = new JButton(new ImageIcon("src/Game/image/Lapin.jpg"));
+                    	lapin.setBounds(i, j, 10, 10);
+                    	panel_CUBES.add(lapin);
                     }
-                    else if (p.getCases()[i][j].getCube().getCouleur().equals("src/Game/image/Panda.jpg")) {
-                    	 panel_CUBES.add(new Animal("src/Game/image/Panda.jpg")); 
+                    else if (p.getCases()[i][j].getCube().getAnimal().getNom().equals("Panda")) {                  	 
+                    	JButton panda = new JButton(new ImageIcon("src/Game/image/Panda.jpg"));
+                    	panda.setBounds(i, j, 10, 10);
+                    	panel_CUBES.add(panda);	
                     }
                 }*/
             }

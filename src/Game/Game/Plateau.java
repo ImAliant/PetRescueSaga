@@ -14,6 +14,7 @@ public class Plateau extends JFrame implements Serializable{
 	protected String[] couleurs = {"Rouge", "Vert", "Bleu", "Jaune", "Violet", "Marron"};
 	protected String[] images = {"src/Game/image/Chat.jpg", "src/Game/image/Lapin.jpg", "src/Game/image/Panda.jpg"};
 	
+	/* Création du plateau */
 	public Plateau(int largeur, int longueur) {
 		this.largeur = largeur;
 		this.longueur = longueur;
@@ -62,6 +63,7 @@ public class Plateau extends JFrame implements Serializable{
 		this.couleurs = couleurs;
 	}
 
+	/* Affiche la couleur du cube */
 	public void affiche() {
 		for (int i = 0; i < longueur; i++) {
 			for (int j = 0; j < largeur; j++) {
@@ -71,6 +73,7 @@ public class Plateau extends JFrame implements Serializable{
 		}
 	}
 
+	/* Compte les cubes blancs */ 
 	public int countBlanc() {
 		int k = 0;
 		for (int i = 0; i < longueur; i++) {
@@ -82,6 +85,8 @@ public class Plateau extends JFrame implements Serializable{
 		}
 		return k;
 	}
+
+	/* Cherche la case blanche la plus haute */ 
 	public boolean estPlusGrand(int colonne,int i,int j) {
 		if(!cases[i][colonne].getCube().isWhite() && cases[j][colonne].getCube().isWhite()) {
 			return true;
@@ -89,6 +94,7 @@ public class Plateau extends JFrame implements Serializable{
 		return false;
 	}
 	
+	/* Permet la gravité lorsque des cubes sont détruits */ 
 	public void graviteCSelect(int colonne) {
 		int n = largeur;
 		for(int i=0;i<=n-2;i++) {
@@ -105,7 +111,6 @@ public class Plateau extends JFrame implements Serializable{
 			}
 		}
 	}
-	
 	public void gravite() {
 		for(int j=0; j<largeur; j++) {
 			graviteCSelect(j);

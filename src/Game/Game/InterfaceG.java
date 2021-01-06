@@ -98,6 +98,7 @@ public class InterfaceG extends JFrame {
     	Lanceur.p.getCases()[i][j].getCube().setCouleur("Blanc"); 
     }
 
+    /* Identification des cases adjacentes récursivement */
     public void casesAdjRec(int x, int y, String c){
         String anc="";
     	if(x-1 >= 0 && x-1 < Lanceur.p.getLongueur() && y >= 0 && y < Lanceur.p.getLargeur()) {
@@ -132,6 +133,7 @@ public class InterfaceG extends JFrame {
         Lanceur.main(args);
     }
 
+    /* Création et propriétés des cubes bleu*/
     public class CubeBleu extends Cube implements MouseInputListener {       
         public CubeBleu(int i, int j, int l, int h) {
             super("Bleu");
@@ -161,6 +163,7 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}             
     }
     
+    /* Création et propriétés des cubes rouge*/
     public class CubeRouge extends Cube implements MouseInputListener {	
         public CubeRouge(int i, int j, int l, int h) {
             super("Rouge");
@@ -190,6 +193,7 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}       
     }
     
+    /* Création et propriétés des cubes vert*/
     public class CubeVert extends Cube implements MouseInputListener {
         public CubeVert(int i, int j, int l, int h) {
             super("Vert");
@@ -219,6 +223,7 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}           
     }
     
+    /* Création et propriétés des cubes violet*/
     public class CubeViolet extends Cube implements MouseInputListener {
         public CubeViolet(int i, int j, int l, int h) {
             super("Violet");
@@ -248,6 +253,7 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}
     }
     
+    /* Création et propriétés des cubes jaune*/
     public class CubeJaune extends Cube implements MouseInputListener {
         public CubeJaune(int i, int j, int l, int h) {
             super("Jaune");
@@ -277,6 +283,7 @@ public class InterfaceG extends JFrame {
         public void mouseMoved(MouseEvent e) {}
     }
     
+    /* Création et propriétés des cubes blanc*/
     public class CubeBlanc extends Cube implements MouseInputListener {
         public CubeBlanc(int i, int j, int l, int h) {
             super("Blanc");
